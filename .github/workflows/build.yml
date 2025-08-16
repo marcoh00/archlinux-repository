@@ -24,34 +24,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
-      - name: Build packages (1st batch w/ dependencies)
-        id: build1
+      - name: Build packages from AUR
+        id: build
         uses: archlinux-ostree-experiments/builder@main
         with:
-          action: 'build-package'
+          action: 'build-aur'
           target: |
             bootc-git
-            bootupd-arch-git
+            bootupd-git
             grub-blscfg
             shim-fedora
           artifacts: 'output'
-          install_dependencies: 'true'
-          install_package: 'true'
           packager: 'archlinux-ostree-experiments <marco@wuthoehle.de>'
           gpgsign: '${{ secrets.GPG_KEY_PEM_2025 }}'
-      - name: Build packages (2nd batch w/ manual dependency management)
-        id: build2
-        uses: archlinux-ostree-experiments/builder@main
-        with:
-          action: 'build-package'
-          target: |
-            grub-blscfg-signed
-          artifacts: 'output'
-          install_dependencies: false
-          install_package: false
-          packager: 'archlinux-ostree-experiments <marco@wuthoehle.de>'
-          gpgsign: '${{ secrets.GPG_KEY_PEM_2025 }}'
-          sbsign: '${{ secrets.MOK_KEY_PEM_2025 }}'
       - name: Create repository
         id: repo
         uses: archlinux-ostree-experiments/builder@main
