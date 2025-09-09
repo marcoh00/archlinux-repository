@@ -37,6 +37,16 @@ jobs:
           artifacts: 'output'
           packager: 'archlinux-ostree-experiments <marco@wuthoehle.de>'
           gpgsign: '${{ secrets.GPG_KEY_PEM_2025 }}'
+      - name: Build bootc-git-composefs (conflicting with bootc)
+        id: buildbootccomposefs
+        uses: archlinux-ostree-experiments/builder@main
+        with:
+          action: 'build-aur'
+          target: |
+            bootc-git-composefs
+          artifacts: 'output'
+          packager: 'archlinux-ostree-experiments <marco@wuthoehle.de>'
+          gpgsign: '${{ secrets.GPG_KEY_PEM_2025 }}'
       - name: Create repository
         id: repo
         uses: archlinux-ostree-experiments/builder@main
