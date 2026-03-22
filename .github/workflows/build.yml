@@ -6,6 +6,8 @@ on:
   push:
     tags:
       - '*'
+  schedule:
+    - cron: "0 4 * * 1"
 
 # Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
 env:
@@ -26,35 +28,25 @@ jobs:
           submodules: recursive
       - name: Build packages from AUR
         id: build
-        uses: archlinux-ostree-experiments/builder@main
+        uses: marcoh00/archlinux-builder@main
         with:
           action: 'build-aur'
           target: |
             bootc-git
-            bootupd-git
-            grub-blscfg
-            shim-fedora
+            llama.cpp-vulkan
+            sunshine-git
+            protonup-qt
           artifacts: 'output'
           packager: 'archlinux-ostree-experiments <marco@wuthoehle.de>'
-          gpgsign: '${{ secrets.GPG_KEY_PEM_2025 }}'
-      - name: Build bootc-git-composefs (conflicting with bootc)
-        id: buildbootccomposefs
-        uses: archlinux-ostree-experiments/builder@main
-        with:
-          action: 'build-aur'
-          target: |
-            bootc-git-composefs
-          artifacts: 'output'
-          packager: 'archlinux-ostree-experiments <marco@wuthoehle.de>'
-          gpgsign: '${{ secrets.GPG_KEY_PEM_2025 }}'
+          gpgsign: '${{ secrets.GPG_KEY_PEM_2026 }}'
       - name: Create repository
         id: repo
-        uses: archlinux-ostree-experiments/builder@main
+        uses: marcoh00/archlinux-builder@main
         with:
           action: 'build-repo'
           target: 'output'
-          artifacts: 'archlinux-ostree-experiments-repo'
-          gpgsign: '${{ secrets.GPG_KEY_PEM_2025 }}'
+          artifacts: 'marcoh00pkgs'
+          gpgsign: '${{ secrets.GPG_KEY_PEM_2026 }}'
       - name: Upload release
         id: release
         uses: softprops/action-gh-release@v2

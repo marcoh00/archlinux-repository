@@ -2,3 +2,4 @@
 *.rpm
 pkg/
 src/
+signing-key-priv.asc
