@@ -49,6 +49,7 @@ jobs:
         id: release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: current
           files: |
             output/*.pkg.tar.zst
             output/*.pkg.tar.zst.sig
