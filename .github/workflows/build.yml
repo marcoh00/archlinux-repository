@@ -30,10 +30,12 @@ jobs:
         with:
           action: 'build-aur'
           target: |
+            ttf-ms-fonts
+            visual-studio-code-bin
+            protonup-qt
+            sunshine-git
             bootc-git
             llama.cpp-vulkan
-            sunshine-git
-            protonup-qt
           artifacts: 'output'
           packager: 'archlinux-ostree-experiments <marco@wuthoehle.de>'
           gpgsign: '${{ secrets.GPG_KEY_PEM_2026 }}'
