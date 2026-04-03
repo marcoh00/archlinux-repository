@@ -28,7 +28,7 @@ jobs:
         id: build
         uses: marcoh00/archlinux-builder@main
         with:
-          action: 'build-aur'
+          action: "build-aur"
           # Temporarily removed until build is fixed: sunshine-git
           target: |
             ttf-ms-fonts
@@ -36,17 +36,18 @@ jobs:
             protonup-qt
             bootc-git
             llama.cpp-vulkan
-          artifacts: 'output'
-          packager: 'archlinux-ostree-experiments <marco@wuthoehle.de>'
-          gpgsign: '${{ secrets.GPG_KEY_PEM_2026 }}'
+            tex-fmt
+          artifacts: "output"
+          packager: "archlinux-ostree-experiments <marco@wuthoehle.de>"
+          gpgsign: "${{ secrets.GPG_KEY_PEM_2026 }}"
       - name: Create repository
         id: repo
         uses: marcoh00/archlinux-builder@main
         with:
-          action: 'build-repo'
-          target: 'output'
-          artifacts: 'marcoh00pkgs'
-          gpgsign: '${{ secrets.GPG_KEY_PEM_2026 }}'
+          action: "build-repo"
+          target: "output"
+          artifacts: "marcoh00pkgs"
+          gpgsign: "${{ secrets.GPG_KEY_PEM_2026 }}"
       - name: Upload release
         id: release
         uses: softprops/action-gh-release@v2
