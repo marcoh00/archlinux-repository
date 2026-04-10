@@ -34,9 +34,11 @@ jobs:
             ttf-ms-fonts
             visual-studio-code-bin
             protonup-qt
-            bootc-git
-            llama.cpp-vulkan
             tex-fmt
+            mistral-vibe
+            bootc-git
+            sunshine-git
+            llama.cpp-vulkan
           artifacts: "output"
           packager: "archlinux-ostree-experiments <marco@wuthoehle.de>"
           gpgsign: "${{ secrets.GPG_KEY_PEM_2026 }}"
