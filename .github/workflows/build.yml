@@ -35,7 +35,6 @@ jobs:
             visual-studio-code-bin
             protonup-qt
             tex-fmt
-            llama-swap
             bootc-git
             sunshine-git
             llama.cpp-vulkan
