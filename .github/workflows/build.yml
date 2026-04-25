@@ -5,7 +5,7 @@ name: Create and publish Arch Linux packages
 on:
   push:
   schedule:
-    - cron: "0 4 * * 1"
+    - cron: "0 4 * * *"
 
 # Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
 env:
