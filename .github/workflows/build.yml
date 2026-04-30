@@ -4,6 +4,8 @@ name: Create and publish Arch Linux packages
 # Configures this workflow to run every time a change is pushed to the branch called `release`.
 on:
   push:
+    tags:
+      - current
   schedule:
     - cron: "0 4 * * *"
 
