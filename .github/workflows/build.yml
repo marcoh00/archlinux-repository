@@ -31,14 +31,12 @@ jobs:
         uses: marcoh00/archlinux-builder@main
         with:
           action: "build-aur"
-          # Temporarily removed until build is fixed: sunshine-git
           target: |
             ttf-ms-fonts
             visual-studio-code-bin
             protonup-qt
             tex-fmt
             bootc
-            bootc-git
             sunshine-git
             llama.cpp-vulkan
           artifacts: "output"
