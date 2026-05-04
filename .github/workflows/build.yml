@@ -39,6 +39,7 @@ jobs:
             bootc
             sunshine-git
             llama.cpp-vulkan
+            stable-diffusion.cpp-vulkan-git
           artifacts: "output"
           packager: "archlinux-ostree-experiments <marco@wuthoehle.de>"
           gpgsign: "${{ secrets.GPG_KEY_PEM_2026 }}"
