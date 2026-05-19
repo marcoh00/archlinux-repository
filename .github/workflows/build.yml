@@ -36,6 +36,7 @@ jobs:
             visual-studio-code-bin
             protonup-qt
             tex-fmt
+            linux-arctis-manager
             bootc
             sunshine-git
             llama.cpp-vulkan
