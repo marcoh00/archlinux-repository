@@ -37,6 +37,7 @@ jobs:
             protonup-qt
             tex-fmt
             linux-arctis-manager
+            tuxmanager
             bootc
             sunshine-git
             llama.cpp-vulkan
