@@ -39,7 +39,7 @@ jobs:
             linux-arctis-manager
             tuxmanager
             bootc
-            sunshine-git
+            sunshine
             llama.cpp-vulkan
           artifacts: "output"
           packager: "archlinux-ostree-experiments <marco@wuthoehle.de>"
