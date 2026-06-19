@@ -34,6 +34,7 @@ jobs:
           action: "build-aur"
           target: |
             ttf-ms-fonts
+            quickemu
             visual-studio-code-bin
             protonup-qt
             tex-fmt
