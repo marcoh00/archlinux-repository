@@ -39,10 +39,8 @@ jobs:
             protonup-qt
             tex-fmt
             linux-arctis-manager
-            tuxmanager
             bootc
             sunshine
-            llama.cpp-vulkan
           artifacts: "output"
           packager: "archlinux-ostree-experiments <marco@wuthoehle.de>"
           gpgsign: "${{ secrets.GPG_KEY_PEM_2026 }}"
